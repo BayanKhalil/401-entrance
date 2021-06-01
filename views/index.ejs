@@ -11,35 +11,39 @@
 
 <body>
     <header>
-      <%- include('layout/header.ejs')%>
+        <%- include('layout/header.ejs')%>
     </header>
     <main>
 
 
-        
-                    
-                    
-                    <% y.forEach(x=>{%>
-                        <div>
-                   
-                <h2> <%= x.name%></h2>
-                <p><%= x.gender%></p>
+
+
+
+        <% y.forEach(x=>{%>
+            <div>
+
+                <h2>
+                    <%= x.name%>
+                </h2>
+                <p>
+                    <%= x.gender%>
+                </p>
                 <img src=" <%= x.img%>" alt="">
-                
-    
-     
-                 <form action="/favorites" method="POST">
-                
-                <input type="hidden" name="name" value="<%= x.name%>">
-                <input type="hidden" name="gender" value="<%= x.gender%>">
-                <input type="hidden" name="img" value="<%= x.img%>">
-                <!-- <input type="hidden" name="img" value="<%= y.img%>">
+
+
+
+                <form action="/favorites" method="POST">
+
+                    <input type="hidden" name="name" value="<%= x.name%>">
+                    <input type="hidden" name="gender" value="<%= x.gender%>">
+                    <input type="hidden" name="img" value="<%= x.img%>">
+                    <!-- <input type="hidden" name="img" value="<%= y.img%>">
                 <input type="hidden" name="logoname" value="<%= y.name%>"> -->
-                
-                <input type="submit"  value="save to favorites">
+
+                    <input type="submit" value="save to favorites">
                 </form>
             </div>
-                <%})%>
+            <%})%>
 
     </main>
 </body>

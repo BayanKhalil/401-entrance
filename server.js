@@ -51,7 +51,7 @@ function homeHandler(req,res){
        
         let data=x.body.map(object=>new Char(object))
         console.log(data);
-        res.render('index',{y:data,cond:0})
+        res.render('index',{y:data})
         let data2=x.body.map(x=>(x.psiPowers.map(object=>new Logo(object))))
         console.log(data2);
         res.render('index',{suby:data2 ,cond:1})
