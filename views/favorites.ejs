@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <%- include('layout/header.ejs')%>
+    </header>
+
+    <main>
+
+        <% if(count) {%>
+        <% data.forEach(x=>{%>
+            <div>
+
+                <h2>
+                    <%= x.name%>
+                </h2>
+                <p>
+                    <%= x.gender%>
+                </p>
+
+
+                
+                                <form action="/favorites/<%= x.id%>?_method=DELETE" method="POST">
+                                <button type="submit"> DELETE</button>
+                                </form>
+
+
+                             <form action="/details/<%= x.id%>" method="GET">
+                                <input type="hidden" name="name" value="<%= x.name%>">
+                                <input type="hidden" name="gender" value="<%= x.gender%>">
+                                <input type="hidden" name="img" value="<%= x.img%>">
+                            <input type="submit" value="UPDATE">
+                            </form>
+                        </div>
+                <%})%>
+
+                <%}else{%>
+                    <h1> FAVORITES PAGE IS EMPTY</h1>
+                <%}%>
+
+    </main>
+</body>
+
+</html>

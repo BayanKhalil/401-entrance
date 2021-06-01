@@ -1,0 +1,20 @@
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+div{
+    width: 30%;
+    border: black solid 1px;
+}
+
+nav{
+    background-color: rgb(11, 114, 75);
+    height: 40px ;
+}
+nav a{
+    align-items: center;
+    padding-left: 30%;
+    color: white;
+    text-decoration: none;
+}

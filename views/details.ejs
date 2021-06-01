@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <header>
+        <nav style="    background-color: rgb(11, 114, 75);">
+            <a style=" align-items: center;padding-left: 30%; color: white;text-decoration: none;" href="/get-characters">HOME PAGE </a>
+            <a style=" align-items: center;padding-left: 30%; color: white;text-decoration: none;" href="/favorites">FAVORITE PAGE </a>
+            </nav>
+    </header>
+
+    <main>
+        <% data.forEach(x=>{%>
+            <div style="text-align: center; margin-top: 50px;">
+
+
+        <form action="/details/<%= x.id%>?_method=PUT" method="POST">
+           <input type="text" name="name" value="<%= x.name%>">
+           <input type="text" name="gender" value="<%= x.gender%>">
+           <input type="hidden" name="id" value="<%= x.id%>">
+           
+       <input type="submit" value="UPDATE">
+       </form> 
+            
+
+                <h2>
+                    <%= x.name%>
+                </h2>
+                <p>
+                    <%= x.gender%>
+                </p>
+
+
+                
+                                 <form action="/details/<%= x.id%>?_method=DELETE" method="POST">
+                                <button type="submit"> DELETE</button>
+                                </form>
+
+                                       <br> 
+
+
+                <%})%>
+
+
+    </main>
+</body>
+</html>
